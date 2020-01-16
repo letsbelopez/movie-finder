@@ -1,8 +1,9 @@
-<div class="gradient">
+<div class="gradient container">
   <header class="hero">
     <img src="../assets/arrow.svg" alt="welcome to alamo drafthouse cinema" />
     <img src="../assets/logo.svg" alt="alamo drafthouse cinema logo" />
   </header>
+
   <main class="finder">
     <h1 class="finder__title">FIND A MOVIE</h1>
 
@@ -26,7 +27,8 @@
         class="film text-offblack"
         href="#!/show/{{ film.filmSlug }}"
         ng-repeat="film in vm.availableFilms | orderBy:'filmName'"
-        >{{ film.filmName }}
+        ><span class="film__title">{{ film.filmName }}</span>
+        <span>
         <svg
           width="24"
           height="24"
@@ -41,9 +43,7 @@
             fill-opacity="0.6"
           />
         </svg>
-
-        <!-- <object type="image/svg+xml" data="../assets/cart.svg" class="logo"></object> -->
-        <!-- <img src="../assets/cart.svg" alt="cart"> -->
+      </span>
       </a>
     </div>
   </main>

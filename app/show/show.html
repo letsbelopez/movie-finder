@@ -1,2 +1,12 @@
-<p>Shows</p>
-{{ vm.film }}
+<!-- Fallback background image is the gradient -->
+<div class="container gradient" style="background-image: url( {{vm.film.landscapeHeroImage}} ), linear-gradient(159.41deg, #ff009d 3.42%, #f5b324 96.5%);">
+  <header class="hero">
+    <img src="../assets/arrow.svg" alt="welcome to alamo drafthouse cinema" />
+    <img src="../assets/logo.svg" alt="alamo drafthouse cinema logo" />
+  </header>
+  <main class="finder">
+    <h1 class="finder__title">{{ vm.film.title }}</h1>
+    <h2 class="finder__subtitle text-grey">{{ vm.film.headline }}</h2>
+    <!-- <img src="{{ vm.film.landscapeHeroImage }}" alt=""> -->
+  </main>
+</div>
