@@ -29,14 +29,16 @@ function ShowController(dataservice, $routeParams) {
     if (dataservice.films.length) {
       loadFilm();
     } else {
-      dataservice.get().then(() => {
+      dataservice.get().then(function() {
         loadFilm();
       });
     }
   }
 
   function loadFilm() {
-    vm.film = dataservice.films.find(film => film.slug === vm.filmSlug);
+    vm.film = dataservice.films.find(function(film) { 
+      return film.slug === vm.filmSlug
+    });
     if (!vm.film) {
       vm.errorMessage = 'No film found.';
     } else {

@@ -44,15 +44,17 @@ function MovieFinderController(dataservice) {
   }
 
   function getFilmsForCinema(id) {
-    vm.currentCinema = vm.cinemas.find(cinema => cinema.id === id);
-    const availableSessions = vm.sessions.filter(session => {
+    vm.currentCinema = vm.cinemas.find(function(cinema) { 
+      return cinema.id === id
+    });
+    const availableSessions = vm.sessions.filter(function(session) {
       return session.cinemaId === id;
     });
     // remove duplicate films from available sessions
-    vm.availableFilms = availableSessions.filter((session, index, self) => {
+    vm.availableFilms = availableSessions.filter(function(session, index, self) {
       return (
         index ===
-        self.findIndex(t => {
+        self.findIndex(function(t) {
           return t.filmSlug === session.filmSlug;
         })
       );
