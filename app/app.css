@@ -60,7 +60,7 @@ body {
     0px 2px 4px rgba(24, 17, 3, 0.14);
   border-radius: 4px;
   max-width: 47rem;
-  margin: 0 auto;
+  margin: 0 auto 4rem;;
   z-index: 100;
 }
 
@@ -176,6 +176,7 @@ h1 {
   }
 
   .finder {
+    margin: 0 auto 2rem;
     padding: 2rem 2rem 2rem 2rem;
   }
   html {
