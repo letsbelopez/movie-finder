@@ -3,10 +3,9 @@
 // Declare app level module which depends on views, and core components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view1',
   'myApp.movieFinder',
   'myApp.show',
-  'myApp.version'
+  'myApp.shared',
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

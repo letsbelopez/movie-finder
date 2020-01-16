@@ -1,6 +1,6 @@
 'use strict';
 
-var movieFinderModule = angular
+angular
   .module('myApp.movieFinder', ['ngRoute'])
 
   .config([
@@ -10,7 +10,7 @@ var movieFinderModule = angular
         templateUrl: 'movieFinder/movieFinder.html',
         controller: 'MovieFinderController',
         controllerAs: 'vm'
-      })
+      });
     }
   ])
   .controller('MovieFinderController', MovieFinderController);
