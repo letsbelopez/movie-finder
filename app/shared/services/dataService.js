@@ -1,4 +1,5 @@
-movieFinderModule.factory('dataservice', dataservice);
+sharedModule
+  .factory('dataservice', dataservice);
 
 dataservice.$inject = ['$http'];
 
@@ -17,8 +18,6 @@ function dataservice($http) {
 
     function getDataComplete(response) {
       service.films = response.data.data.films;
-      console.log(service.films);
-      
       return response;
     }
 

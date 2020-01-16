@@ -21,6 +21,7 @@ function ShowController(dataservice, $routeParams) {
   const vm = this;
   vm.film = null;
   vm.filmSlug = $routeParams.filmSlug;
+  vm.errorMessage = null;
 
   activate();
 
@@ -36,6 +37,10 @@ function ShowController(dataservice, $routeParams) {
 
   function loadFilm() {
     vm.film = dataservice.films.find(film => film.slug === vm.filmSlug);
-    console.log(vm.film);
+    if (!vm.film) {
+      vm.errorMessage = 'No film found.';
+    } else {
+      vm.errorMessage = null;
+    }
   }
 }
